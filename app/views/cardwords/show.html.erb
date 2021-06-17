@@ -14,6 +14,7 @@
     
       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
        Перевод
+       
       </button>
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
@@ -23,7 +24,12 @@
         <%= @cardword.group %>
         <%= @cardword.incorrect_group %>
         <%= @cardword.date_change_group%>
-        <%= @cardword.hard_word %></div>
+        <%= @cardword.hard_word %>
+        <p>
+        <%= link_to 'Верно',up_group_cardword_path ,class: "btn btn-success" %>
+        <%= link_to 'Не верно',root_path ,class: "btn btn-danger" %>
+        </p>
+        </div>
     </div>
   </div>
 </div>

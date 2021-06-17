@@ -1,4 +1,5 @@
 class CardwordsController < ApplicationController
+
   def destroy
     @cardword = Cardword.find_by id: params[:id]
     @cardword.destroy
@@ -36,9 +37,18 @@ class CardwordsController < ApplicationController
       render :edit
     end
   end 
+
   def show 
     @cardword = Cardword.find_by id: params[:id]
   end 
+
+  def up_group
+    @cardword = Cardword.find_by id: params[:id]
+    @cardword.increment! :group
+    redirect_to cardword_path(@cardword)
+  end
+
+
   private
 
   def cardword_params
