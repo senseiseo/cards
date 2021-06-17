@@ -1,0 +1,13 @@
+<%= form_with model: @cardword  do |f| %>
+<div>
+  <%= f.label :word  %>
+  <%= f.text_field :word, required: true, minlenght: 2, placeholder: "Title"  %>
+</div>
+<div>
+  <%= f.label :description  %>
+  <%= f.text_area :description, required: true, minlenght: 2  %>
+</div>
+<div>
+  <%= f.submit "Submit" %>
+</div>
+<% end %>

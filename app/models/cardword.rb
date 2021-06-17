@@ -1,0 +1,3 @@
+class Cardword < ApplicationRecord
+  
+end
