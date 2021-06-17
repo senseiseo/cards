@@ -1,10 +1,37 @@
-<h1><%= @cardword.word%> </h1>
+<div class="container-sm">
 
-<p> 
-  <%= @cardword.description%>
-  <%= @cardword.response %>
-  <%= @cardword.group %>
-  <%= @cardword.incorrect_group %>
-  <%= @cardword.date_change_group%>
-  <%= @cardword.hard_word %>
-</p>
+<div class="card text-center">
+  <div class="card-header">
+    Карточки
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+        <%= @cardword.word%> 
+    </h5>
+<div class="accordion accordion-flush" id="accordionFlushExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="flush-headingOne">
+    
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+       Перевод
+      </button>
+    </h2>
+    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body">
+        <%= @cardword.description%>
+        <%= @cardword.response %>
+        <%= @cardword.group %>
+        <%= @cardword.incorrect_group %>
+        <%= @cardword.date_change_group%>
+        <%= @cardword.hard_word %></div>
+    </div>
+  </div>
+</div>
+  </div>
+  <div class="card-footer text-muted">
+    время 
+  </div>
+</div>
+</div>
+
+

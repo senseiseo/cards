@@ -10,15 +10,17 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     
   </head>
+<div class="container">
+  <!-- Content here -->
 
   <body>
     <%= render 'layouts/nav'%>
     <nav>
-      <ul>
-        <li><%= link_to 'new', new_cardword_path %></li>
-        <li><%=  link_to 'Home', root_path %></li>
-        <li><%=  link_to 'CardWord', cardwords_path %></li>
-      </ul>
+      
+       <%# <%= link_to 'new', new_cardword_path, class: "btn btn-primary"  %> 
+       <%# <%=  link_to 'Home', root_path, class: "btn btn-primary" %>
+       <%# <%=  link_to 'CardWord', cardwords_path, class: "btn btn-primary" %> 
+      
     </nav>
     <main>
   
@@ -26,3 +28,5 @@
   </main>
   </body>
 </html>
+
+</div>

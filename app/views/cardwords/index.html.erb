@@ -15,7 +15,7 @@
 
   <br>
   
-  <%= link_to 'Show', cardword_path(cardword) %>
-  <%= link_to 'Edit', edit_cardword_path(cardword) %>
-  <%= link_to 'Destroy', cardword_path(cardword), data: {method: :delete, confirm: 'Точно?'} %>
+  <%= link_to 'Show', cardword_path(cardword),class: "btn btn-primary" %>
+  <%= link_to 'Edit', edit_cardword_path(cardword),class: "btn btn-primary" %>
+  <%= link_to 'Destroy', cardword_path(cardword),class: "btn btn-primary" ,method: :delete %>
 <% end %>
