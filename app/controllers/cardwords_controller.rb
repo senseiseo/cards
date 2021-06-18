@@ -42,11 +42,22 @@ class CardwordsController < ApplicationController
     @cardword = Cardword.find_by id: params[:id]
   end 
 
-  def up_group
+  def good_response
     @cardword = Cardword.find_by id: params[:id]
     @cardword.increment! :group
+    @cardword.group = 1 
     redirect_to cardword_path(@cardword)
   end
+
+  def bad_response
+    @cardword = Cardword.find_by id: params[:id]
+    @cardword.group = 1 
+    @cardword.save
+    redirect_to cardword_path(@cardword)
+
+  end
+
+
 
 
   private
