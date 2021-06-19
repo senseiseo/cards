@@ -27,8 +27,8 @@
        <li>Сложное слово: <%= @cardwords.hard_word %></li>
        <li>Неверные ответы:<%= @cardwords.bad_response %></li>
         <p>
-         <%= link_to 'Верно',good_response_cardword_url(@cardwords) ,class: "btn btn-success" %>
-         <%= link_to 'Не верно',bad_response_cardword_url(@cardwords) ,class: "btn btn-danger" %>
+         <%= link_to 'Верно',good_response_cardword_path(@cardwords) ,class: "btn btn-success" %>
+         <%= link_to 'Не верно',bad_response_cardword_path(@cardwords) ,class: "btn btn-danger" %>
         </p>
         </div>
     </div>

@@ -1,5 +1,5 @@
 class CardwordsController < ApplicationController
-
+  
 
   before_action :find_card , only:%i[ edit create update show good_response bad_response ]
   def destroy
@@ -45,7 +45,7 @@ class CardwordsController < ApplicationController
 
   def good_response
     @cardword.increment! :group
-    if @cardword.group == 12 
+    if @cardword.group == 5 
       @cardword.hard_word = true
     end 
     @cardword.save
@@ -68,22 +68,90 @@ class CardwordsController < ApplicationController
     #  @cardwords.where("word = 'book'")
     #  render :start
     # @cardwords.where(group: 0)
-    
      @cardwords = Cardword.where(group: 0 ).last
     if @cardwords.present?
       render :start
     else
-      flash.now[:error] = "Could not save client"
-     
-      redirect_to root_path 
+       flash.now[:error] = "Could not save client"
+       
+       start_viktorine1
+    end 
+  end
+  def start_viktorine1
+    #  @cardwords = Cardword.all
+    #  @cardwords.where("word = 'book'")
+    #  render :start
+    # @cardwords.where(group: 0)
+     @cardwords = Cardword.where(group: 1 ).last
+    if @cardwords.present?
+      render :start
+    else
+       flash.now[:error] = "Could not save client"
+       
+       start_viktorine2
+    end 
+  end
+  def start_viktorine2
+    #  @cardwords = Cardword.all
+    #  @cardwords.where("word = 'book'")
+    #  render :start
+    # @cardwords.where(group: 0)
+     @cardwords = Cardword.where(group: 2 ).last
+    if @cardwords.present?
+      render :start
+    else
+       flash.now[:error] = "Could not save client"
+       
+       start_viktorine3
+    end 
+  end
+  def start_viktorine3
+    #  @cardwords = Cardword.all
+    #  @cardwords.where("word = 'book'")
+    #  render :start
+    # @cardwords.where(group: 0)
+     @cardwords = Cardword.where(group: 3 ).last
+    if @cardwords.present?
+      render :start
+    else
+       flash.now[:error] = "Could not save client"
+       
+       start_viktorine4
+    end 
+  end
+  def start_viktorine4
+    #  @cardwords = Cardword.all
+    #  @cardwords.where("word = 'book'")
+    #  render :start
+    # @cardwords.where(group: 0)
+     @cardwords = Cardword.where(group: 4 ).last
+    if @cardwords.present?
+      render :start
+    else
+       flash.now[:error] = "Could not save client"
+       
+       start_viktorine5
+    end 
+  end
+  def start_viktorine5
+    #  @cardwords = Cardword.all
+    #  @cardwords.where("word = 'book'")
+    #  render :start
+    # @cardwords.where(group: 0)
+     @cardwords = Cardword.where(group: 5 ).last
+    if @cardwords.present?
+      render :start
+    else
+       flash.now[:error] = "Could not save client"
+       if  @cardwords.hard_word == true
+        
+       else
+       start_viktorine6
+       end
     end 
   end
 
-   
-
-
-
-
+  
   private
 
   def find_card
