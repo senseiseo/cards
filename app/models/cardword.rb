@@ -24,7 +24,7 @@ class Cardword < ApplicationRecord
     when 10
       4.months
     else
-      50.years # если уровень группы вырос до 12 то не когда не будем показывать
+      1.years # если уровень группы вырос до 12 то не когда не будем показывать
     end
   end
 end

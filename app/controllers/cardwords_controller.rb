@@ -1,17 +1,13 @@
 class CardwordsController < ApplicationController
-  
-
   before_action :find_card , only:%i[ edit create update show good_response bad_response ]
+
   def destroy
     @cardword = Cardword.find_by id: params[:id]
     @cardword.destroy
     redirect_to cardwords_path
   end 
-  
-  
 
   def edit 
-    
   end 
 
   def index
@@ -40,7 +36,6 @@ class CardwordsController < ApplicationController
   end 
 
   def show 
-    
   end 
 
   def good_response
@@ -73,7 +68,6 @@ class CardwordsController < ApplicationController
       render :start
     else
        flash.now[:error] = "Could not save client"
-       
        start_viktorine1
     end 
   end
@@ -87,7 +81,6 @@ class CardwordsController < ApplicationController
       render :start
     else
        flash.now[:error] = "Could not save client"
-       
        start_viktorine2
     end 
   end
@@ -101,8 +94,7 @@ class CardwordsController < ApplicationController
       render :start
     else
        flash.now[:error] = "Could not save client"
-       
-       start_viktorine3
+     start_viktorine3
     end 
   end
   def start_viktorine3
@@ -115,39 +107,24 @@ class CardwordsController < ApplicationController
       render :start
     else
        flash.now[:error] = "Could not save client"
-       
        start_viktorine4
     end 
   end
   def start_viktorine4
-    #  @cardwords = Cardword.all
-    #  @cardwords.where("word = 'book'")
-    #  render :start
-    # @cardwords.where(group: 0)
      @cardwords = Cardword.where(group: 4 ).last
     if @cardwords.present?
       render :start
     else
        flash.now[:error] = "Could not save client"
-       
        start_viktorine5
     end 
   end
   def start_viktorine5
-    #  @cardwords = Cardword.all
-    #  @cardwords.where("word = 'book'")
-    #  render :start
-    # @cardwords.where(group: 0)
      @cardwords = Cardword.where(group: 5 ).last
     if @cardwords.present?
       render :start
-    else
-       flash.now[:error] = "Could not save client"
-       if  @cardwords.hard_word == true
-        
-       else
-       start_viktorine6
-       end
+    else 
+      redirect_to root_path
     end 
   end
 
