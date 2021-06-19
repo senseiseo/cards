@@ -6,7 +6,7 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">
-        <%= @cardword.word%> 
+        <%= @cardwords.word%> 
     </h5>
 <div class="accordion accordion-flush" id="accordionFlushExample">
   <div class="accordion-item">
@@ -19,26 +19,28 @@
     </h2>
     <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
       <div class="accordion-body">
-        <li>Id: <%= @cardword.id%></li>
-       <li>Перевод: <%= @cardword.description%></li>
-       <li>Правильные ответы: <%= @cardword.response %></li>
-       <li>Уровень сложности: <%= @cardword.group %></li>
-       <li>Время: <%= @cardword.date_change_group%></li>
-       <li>Сложное слово: <%= @cardword.hard_word %></li>
-       <li>Неверные ответы:<%= @cardword.bad_response %></li>
+        <li>Id: <%= @cardwords.id%></li>
+       <li>Перевод: <%= @cardwords.description%></li>
+       <li>Правильные ответы: <%= @cardwords.response %></li>
+       <li>Уровень сложности: <%= @cardwords.group %></li>
+       <li>Время: <%= @cardwords.date_change_group%></li>
+       <li>Сложное слово: <%= @cardwords.hard_word %></li>
+       <li>Неверные ответы:<%= @cardwords.bad_response %></li>
         <p>
-        <%= link_to 'Верно',good_response_cardword_path ,class: "btn btn-success" %>
-        <%= link_to 'Не верно',bad_response_cardword_path ,class: "btn btn-danger" %>
+         <%= link_to 'Верно',good_response_cardword_url(@cardwords) ,class: "btn btn-success" %>
+         <%= link_to 'Не верно',bad_response_cardword_url(@cardwords) ,class: "btn btn-danger" %>
         </p>
         </div>
     </div>
   </div>
 </div>
+
+
+
   </div>
   <div class="card-footer text-muted">
     время 
   </div>
 </div>
 </div>
-
-
+  

@@ -1,19 +1,16 @@
-<h1> @cardwords </h1>
-
-<%# <%= @questions.inspect%> 
+<div class="d-grid gap-2 col-6 mx-auto">
+ <%= link_to 'Старт',start_viktorine_cardwords_path ,class: "btn btn-success" %>
+</div>
 
 <% @cardwords.each do |cardword| %>
   <h2><%= cardword.word %>
-  <h2><%= cardword.description %>
+ <!-- <h2><%= cardword.description %>
   <h2><%= cardword.response %>
   <h2><%= cardword.group %>
   <h2><%= cardword.incorrect_group %>
   <h2><%= cardword.date_change_group%>
-  <h2><%= cardword.hard_word %>
- 
-  <h2> =============== </h2>
-
-  <br>
+  <h2><%= cardword.hard_word %> -->
+ <br>
   
   <%= link_to 'Show', cardword_path(cardword),class: "btn btn-primary" %>
   <%= link_to 'Edit', edit_cardword_path(cardword),class: "btn btn-primary" %>
