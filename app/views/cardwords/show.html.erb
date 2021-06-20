@@ -23,9 +23,11 @@
        <li>Перевод: <%= @cardword.description%></li>
        <li>Правильные ответы: <%= @cardword.response %></li>
        <li>Уровень сложности: <%= @cardword.group %></li>
+       <td> время до след показа <%= @cardword.time_to_next_appearance  %>
        <li>Время: <%= @cardword.date_change_group%></li>
        <li>Сложное слово: <%= @cardword.hard_word %></li>
        <li>Неверные ответы:<%= @cardword.bad_response %></li>
+       <li>Время :<%= @cardword.reviewed_at %></li>
         <p>
         <%= link_to 'Верно',good_response_cardword_path ,class: "btn btn-success" %>
         <%= link_to 'Не верно',bad_response_cardword_path ,class: "btn btn-danger" %>
