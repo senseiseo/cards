@@ -1,13 +1,13 @@
 <%= form_with model: @cardword  do |f| %>
 <div>
-  <%= f.label :word  %>
+  <%= f.label :Слово  %>
   <%= f.text_field :word, required: true, minlenght: 2, placeholder: "Слово"  %>
 </div>
 <div>
-  <%= f.label :description  %>
+  <%= f.label :Перевод  %>
   <%= f.text_area :description, required: true, minlenght: 2,placeholder: "Перевод"  %>
 </div>
 <div>
-  <%= f.submit "Submit" %>
+  <%= f.submit "Создать" %>
 </div>
 <% end %>

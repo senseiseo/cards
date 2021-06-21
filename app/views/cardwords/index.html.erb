@@ -1,7 +1,7 @@
 <div class="d-grid gap-2 col-6 mx-auto">
  <%= link_to 'Старт',start_viktorine_cardwords_path ,class: "btn btn-success" %>
 </div>
-
+<div class="container">
 <% @cardwords.each do |cardword| %>
   <h2><%= cardword.word %>
  <!-- <h2><%= cardword.description %>
@@ -16,3 +16,4 @@
   <%= link_to 'Edit', edit_cardword_path(cardword),class: "btn btn-primary" %>
   <%= button_to 'Destroy', cardword_path(cardword),class: "btn btn-primary" ,method: :delete %>
 <% end %>
+</div>

@@ -46,7 +46,6 @@ class CardwordsController < ApplicationController
       @cardword.hard_word = true
     end 
     @cardword.save
-     flash[:notice] = "Thanks for your comment!"
     start_viktorine
   end
 
@@ -63,112 +62,107 @@ class CardwordsController < ApplicationController
     
   def start_viktorine
      @cardwords = Cardword.where(group: 0 ).last
-     byebug
-    if @cardwords.present?  and (@cardwords.time_to_next_appearance = 0 )
+    if @cardwords.present?  and (@cardwords.time_to_next_appearance == 0 )
       render :start
     else
-       flash.now[:error] = "Could not save client"
        start_viktorine1
     end 
   end
   def start_viktorine1
      @cardwords = Cardword.where(group: 1 ).last
-    if @cardwords.present?  and (@cardwords.time_to_next_appearance = 0 )
+    if @cardwords.present?  and (@cardwords.time_to_next_appearance == 0 )
       render :start
     else
-       flash.now[:error] = "Could not save client"
        start_viktorine2
     end 
   end
   def start_viktorine2
      @cardwords = Cardword.where(group: 2 ).last
-    if @cardwords.present?  and (@cardwords.time_to_next_appearance = 0 )
+    if @cardwords.present?  and (@cardwords.time_to_next_appearance == 0 )
       render :start
     else
-       flash.now[:error] = "Could not save client"
      start_viktorine3
     end 
   end
   def start_viktorine3
      @cardwords = Cardword.where(group: 3 ).last
-    if @cardwords.present?  and (@cardwords.time_to_next_appearance = 0 )
+    if @cardwords.present?  and (@cardwords.time_to_next_appearance == 0 )
       render :start
     else
-       flash.now[:error] = "Could not save client"
        start_viktorine4
     end 
   end
   def start_viktorine4 
      @cardwords = Cardword.where(group: 4 ).last
-    if @cardwords.present?  and (@cardwords.time_to_next_appearance = 0 )
+    if @cardwords.present?  and (@cardwords.time_to_next_appearance == 0 )
       render :start
     else
-       flash.now[:error] = "Could not save client"
        start_viktorine5
     end 
   end
   def start_viktorine5
      @cardwords = Cardword.where(group: 5 ).last
-    if @cardwords.present? and (@cardwords.time_to_next_appearance = 0 )
+    if @cardwords.present? and (@cardwords.time_to_next_appearance == 0 )
       render :start
     else 
       start_viktorine6
     end 
   end
-  # def start_viktorine6
-  #   @cardwords = Cardword.where(group: 6 ).last
-  #    if @cardwords.present? and (@cardwords.time_to_next_appearance = 0 )
-  #      render :start
-  #    else 
-  #     start_viktorine7
-  #   end 
-  # end
+  def start_viktorine6
+    @cardwords = Cardword.where(group: 6 ).last
+     if @cardwords.present? and (@cardwords.time_to_next_appearance == 0 )
+       render :start
+     else 
+      start_viktorine7
+    end 
+  end
 
-  # def start_viktorine7
-  #   @cardwords = Cardword.where(group: 7 ).last
-  #    if @cardwords.present? and (@cardwords.time_to_next_appearance = 0 )
-  #      render :start
-  #    else 
-  #     start_viktorine8
-  #   end 
-  # end
+  def start_viktorine7
+    @cardwords = Cardword.where(group: 7 ).last
+     if @cardwords.present? and (@cardwords.time_to_next_appearance == 0 )
+       render :start
+     else 
+      start_viktorine8
+    end 
+  end
 
-  # def start_viktorine8
-  #   @cardwords = Cardword.where(group: 8 ).last
-  #    if @cardwords.present? and (@cardwords.time_to_next_appearance = 0 )
-  #      render :start
-  #    else 
-  #     start_viktorine9
-  #   end 
-  # end
+  def start_viktorine8
+    @cardwords = Cardword.where(group: 8 ).last
+     if @cardwords.present? and (@cardwords.time_to_next_appearance == 0 )
+       render :start
+     else 
+      start_viktorine9
+    end 
+  end
 
-  # def start_viktorine9
-  #   @cardwords = Cardword.where(group: 9 ).last
-  #    if @cardwords.present? and (@cardwords.time_to_next_appearance = 0 )
-  #      render :start
-  #    else 
-  #     start_viktorine10
-  #   end 
-  # end
+  def start_viktorine9
+    @cardwords = Cardword.where(group: 9 ).last
+     if @cardwords.present? and (@cardwords.time_to_next_appearance == 0 )
+       render :start
+     else 
+      start_viktorine10
+    end 
+  end
 
   
-  # def start_viktorine10
-  #   @cardwords = Cardword.where(group: 10 ).last
-  #    if @cardwords.present? and (@cardwords.time_to_next_appearance = 0 )
-  #      render :start
-  #    else 
-  #     start_viktorine11
-  #   end 
-  # end
+  def start_viktorine10
+    @cardwords = Cardword.where(group: 10 ).last
+     if @cardwords.present? and (@cardwords.time_to_next_appearance == 0 )
+       render :start
+     else 
+      start_viktorine11
+    end 
+  end
 
-  # def start_viktorine11
-  #   @cardwords = Cardword.where(group: 11 ).last
-  #    if @cardwords.present? and (@cardwords.time_to_next_appearance = 0 )
-  #      render :start
-  #    else 
-  #     redirect_to :root_path
-  #   end 
-  # end
+  def start_viktorine11
+    @cardwords = Cardword.where(group: 11 ).last
+     if @cardwords.present? and (@cardwords.time_to_next_appearance == 0 )
+       render :start
+     else 
+      flash[:notice] = "Доступных карточек нет"
+      redirect_to root_path
+    end 
+  end
   
   private
 
