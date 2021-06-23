@@ -62,7 +62,20 @@ class CardwordsController < ApplicationController
     start_viktorine
   end
     
+<<<<<<< Updated upstream
   def start_viktorine #  методы обработки старта викторинры, нарушение всех принципов программировния )
+=======
+  def cardwords(number) 
+    @cardwords = Cardword.where(group: number ).last
+      if @cardwords.present?  and (@cardwords.time_to_next_appearance == 0 )
+        render :start
+      else
+         send('start_viktorine' + "#{number}")
+      end
+  end
+
+  def start_viktorine 
+>>>>>>> Stashed changes
      @cardwords = Cardword.where(group: 0 ).last
     if @cardwords.present?  and @cardwords.time_to_next_appearance == 0  and @cardwords.hard_word == false
       render :start
