@@ -56,7 +56,7 @@ class CardwordsController < ApplicationController
     @cardword.reviewed_at = DateTime.now 
     @cardword.increment! :bad_response
       if  @cardword.bad_response == 10 
-        @cardword.hard_word = true
+        @cardword.hard_word = true 
       end 
     @cardword.save
     start_viktorine
